@@ -1,10 +1,13 @@
+//Progress marker references in DOM
 const progress = document.getElementById("progress");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 const circles = document.querySelectorAll(".circle");
 
+//This denotes current target in progress
 let currentActive = 1;
 
+//Whenever the user presses next button, Move the progress to next position
 next.addEventListener("click", () => {
     currentActive++;
     console.log(currentActive);
@@ -18,6 +21,7 @@ next.addEventListener("click", () => {
     setupProgress();
 });
 
+//Whenever the user presses previous button, Move the progress to previous position
 prev.addEventListener("click", () => {
     currentActive--;
     console.log(currentActive);
@@ -31,6 +35,10 @@ prev.addEventListener("click", () => {
     setupProgress();
 });
 
+/**
+ * @author Jeeva Kalaiselvam
+ * Checks if the current progress marker is at same index and highlights the position
+ */
 function setupProgress() {
     circles.forEach((circle, index) => {
         if (index + 1 == currentActive) {
@@ -40,6 +48,9 @@ function setupProgress() {
     });
 }
 
+/**
+ * Removes all highlight from all progress markers in application
+ */
 function removeAllCircleActive() {
     circles.forEach((circle) => {
         circle.classList.remove("active");
@@ -110,6 +121,9 @@ let score = 0; //track score for each correct answer selected
 resultContainer.style.display = "none";
 loadQuiz();
 
+/**
+ * This function compares the user selected answer to the one that is correct declared in the questions array and evaluates answer based on it and applies score to the user.
+ */
 function getSelectedValueAndEvaluate() {
     let optionSelected = "";
 
@@ -127,6 +141,9 @@ function getSelectedValueAndEvaluate() {
     }
 }
 
+/**
+ * This function unchecks all answers for a given question
+ */
 function unCheckAllOptions() {
     a.checked = false;
     b.checked = false;
@@ -134,6 +151,10 @@ function unCheckAllOptions() {
     d.checked = false;
 }
 
+/**
+ *
+ * @returns Boolean - Checks if any answer is checked and returns true or false based on that
+ */
 function checkSelectedStatus() {
     if (a.checked || b.checked || c.checked || d.checked) {
         return true;
@@ -142,6 +163,9 @@ function checkSelectedStatus() {
     }
 }
 
+/**
+ * Load the quiz app with new question selected randomly from array of questions declared above
+ */
 function loadQuiz() {
     //uncheck all options when next question is loaded
     unCheckAllOptions();
