@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Progress Indicator</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="quiz-container" id="quiz-container">
+                <div class="quiz-header">
+                    <h2 class="question" id="question">Question Text</h2>
+                    <ul>
+                        <li>
+                            <input
+                                type="radio"
+                                id="a"
+                                name="answer"
+                                class="answer"
+                            />
+                            <label for="a" id="a_text">Option A</label>
+                        </li>
+                        <li>
+                            <input
+                                type="radio"
+                                id="b"
+                                name="answer"
+                                class="answer"
+                            />
+                            <label for="b" id="b_text">Option B</label>
+                        </li>
+                        <li>
+                            <input
+                                type="radio"
+                                id="c"
+                                name="answer"
+                                class="answer"
+                            />
+                            <label for="c" id="c_text">Option C</label>
+                        </li>
+                        <li>
+                            <input
+                                type="radio"
+                                id="d"
+                                name="answer"
+                                class="answer"
+                            />
+                            <label for="d" id="d_text">Option D</label>
+                        </li>
+                    </ul>
+                </div>
+                <button id="submit">Next</button>
+            </div>
+            <div class="result-container" id="result-container">
+                You scored 100 points
+            </div>
+
+            <div class="next-container">
+                <div class="progress-container">
+                    <div class="progress" id="progress"></div>
+                    <div class="circle active">1</div>
+                    <div class="circle">2</div>
+                    <div class="circle">3</div>
+                    <div class="circle">4</div>
+                </div>
+            </div>
+
+            <button class="btn" id="prev" disabled>PREV</button>
+            <button class="btn" id="next">NEXT</button>
+        </div>
+    </body>
+</html>
