@@ -8,4 +8,4 @@ Check the live version here <https://jeevakalaiselvam.github.io/progress-indicat
 
 # Screenshots
 
-![Scrrenshot](screens/screen.png)
+![Screenshot](screens/screen1.png)
